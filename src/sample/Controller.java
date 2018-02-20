@@ -2,9 +2,12 @@ package sample;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+
+import static sample.Main.log;
 
 public class Controller {
 
@@ -87,7 +90,7 @@ public class Controller {
 
     String value1;
     String value2;
-    String valueTemp;
+    String valueTemp;;
 
     int operator;
 
@@ -96,110 +99,129 @@ public class Controller {
         trueOperation.setOnAction(event -> {
             valueTemp = "true";
             outputOperation.setText("true");
+            log.info("valueTemp = true");
         });
         nullOperation.setOnAction(event -> {
             valueTemp = "null";
             outputOperation.setText("null");
+            log.info("valueTemp = null");
         });
         falseOperation.setOnAction(event -> {
             valueTemp = "false";
             outputOperation.setText("false");
+            log.info("valueTemp = false");
         });
 
         andClick.setOnAction(event -> {
             operator = 1;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = &&");
             //output.setText("");
         });
         orClick.setOnAction(event -> {
             operator = 2;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = ||");
             //output.setText("");
         });
         equalilyClick.setOnAction(event -> {
             operator = 3;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = ~");
             //output.setText("");
         });
         xOrClick.setOnAction(event -> {
             operator = 4;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = !~");
             //output.setText("");
         });
         strilkaPirsaClick.setOnAction(event -> {
             operator = 5;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = !||");
             //output.setText("");
         });
         strihShafferaClick.setOnAction(event -> {
             operator = 6;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = !&&");
             //output.setText("");
         });
         implicationClick.setOnAction(event -> {
             operator = 7;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = ->");
             //output.setText("");
         });
         obernImplicationClick.setOnAction(event -> {
             operator = 8;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = <-");
             //output.setText("");
         });
         notImplicationClick.setOnAction(event -> {
             operator = 9;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = !->");
             //output.setText("");
         });
         obernNotImplicationClick.setOnAction(event -> {
             operator = 10;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = !<-");
             //output.setText("");
         });
         repeatFirstClick.setOnAction(event -> {
             operator = 11;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = (repeat first)");
             //output.setText("");
         });
         repeatSecondClick.setOnAction(event -> {
             operator = 12;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = (repeat second)");
             //output.setText("");
         });
         notFirstClick.setOnAction(event -> {
             operator = 13;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = (not first)");
             //output.setText("");
         });
         notSecondClick.setOnAction(event -> {
             operator = 14;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = (not second)");
             //output.setText("");
         });
         constTrueClick.setOnAction(event -> {
             operator = 15;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = (const true)");
             //output.setText("");
         });
         constFalseClick.setOnAction(event -> {
             operator = 16;
             value1 = outputOperation.getText();
             outputOperation.setText("");
+            log.info("operation = (const false)");
             //output.setText("");
         });
 
@@ -207,6 +229,7 @@ public class Controller {
             outputOperation.setText("");
             output.setText("");
             operator = 0;
+            log.info("clear all operands and input fields of input and output");
         });
 
         equalsClick.setOnAction(event -> {
